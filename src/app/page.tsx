@@ -1,3 +1,10 @@
+import { OrganizationSwitcher, UserButton } from "@clerk/nextjs"
+
 export default function Home() {
-  return <h1>えななん♡</h1>
+  return (
+    <div className="flex flex-col items-start gap-4">
+      <UserButton />
+      <OrganizationSwitcher />
+    </div>
+  )
 }
