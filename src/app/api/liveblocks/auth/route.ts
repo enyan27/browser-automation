@@ -20,7 +20,8 @@ export async function POST() {
   const { status, body } = await liveblocks.identifyUser(
     {
       userId,
-      groupIds: [orgId]
+      groupIds: [orgId],
+      organizationId: orgId
     },
     {
       userInfo: {
