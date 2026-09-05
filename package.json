@@ -10,6 +10,11 @@
   },
   "dependencies": {
     "@clerk/nextjs": "^7.5.12",
+    "@liveblocks/client": "^3.22.0",
+    "@liveblocks/node": "^3.22.0",
+    "@liveblocks/react": "^3.22.0",
+    "@liveblocks/react-flow": "^3.22.0",
+    "@liveblocks/react-ui": "^3.22.0",
     "@neondatabase/serverless": "^1.1.0",
     "@trigger.dev/react-hooks": "^4.5.1",
     "@trigger.dev/sdk": "^4.5.1",
