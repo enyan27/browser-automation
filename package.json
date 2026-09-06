@@ -9,6 +9,8 @@
     "format": "biome format --write"
   },
   "dependencies": {
+    "@browserbasehq/sdk": "2.15.0",
+    "@browserbasehq/stagehand": "3.6.0",
     "@clerk/nextjs": "^7.5.12",
     "@liveblocks/client": "^3.22.0",
     "@liveblocks/node": "^3.22.0",
@@ -16,8 +18,8 @@
     "@liveblocks/react-flow": "^3.22.0",
     "@liveblocks/react-ui": "^3.22.0",
     "@neondatabase/serverless": "^1.1.0",
-    "@trigger.dev/react-hooks": "^4.5.1",
-    "@trigger.dev/sdk": "^4.5.1",
+    "@trigger.dev/react-hooks": "4.5.2",
+    "@trigger.dev/sdk": "4.5.2",
     "@xyflow/react": "^12.11.2",
     "class-variance-authority": "^0.7.1",
     "clsx": "^2.1.1",
@@ -40,7 +42,7 @@
   "devDependencies": {
     "@biomejs/biome": "2.5.10",
     "@tailwindcss/postcss": "^4",
-    "@trigger.dev/build": "^4.5.1",
+    "@trigger.dev/build": "4.5.2",
     "@types/node": "^20",
     "@types/react": "^19",
     "@types/react-dom": "^19",
