@@ -16,7 +16,10 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
   return (
     <html lang="en" suppressHydrationWarning>
       <body className={cn(font.className, "antialiased")}>
-        <ClerkProvider taskUrls={{ "choose-organization": "/choose-organization" }}>
+        <ClerkProvider
+          taskUrls={{ "choose-organization": "/choose-organization" }}
+          telemetry={false}
+        >
           <ThemeProvider>
             {children}
             <Toaster />
