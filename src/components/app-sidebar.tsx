@@ -7,6 +7,7 @@ import {
   SidebarContent,
   SidebarFooter,
   SidebarHeader,
+  SidebarRail,
   SidebarTrigger
 } from "@/components/ui/sidebar"
 import { createWorkflowAction } from "@/features/workflows/actions"
@@ -49,6 +50,7 @@ export async function AppSidebar({ ...props }: React.ComponentProps<typeof Sideb
           }}
         />
       </SidebarFooter>
+      <SidebarRail />
     </Sidebar>
   )
 }
