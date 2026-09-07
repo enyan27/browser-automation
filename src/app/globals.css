@@ -129,3 +129,9 @@
     cursor: pointer;
   }
 }
+
+.react-flow__edge.selected .react-flow__edge-path {
+  stroke: var(--primary);
+  stroke-width: 3;
+  filter: drop-shadow(0 0 2px var(--primary));
+}

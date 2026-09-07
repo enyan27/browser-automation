@@ -9,7 +9,9 @@ import {
   type ColorMode,
   type Edge,
   NodeTypes,
-  Panel
+  Panel,
+  Background,
+  MiniMap
 } from "@xyflow/react"
 import { useLiveblocksFlow, Cursors } from "@liveblocks/react-flow"
 import { AvatarStack } from "@liveblocks/react-ui"
@@ -66,6 +68,8 @@ export function Canvas() {
         onEdgesChange={onEdgesChange}
         onConnect={onConnect}
         onDelete={onDelete}
+        deleteKeyCode={["Backspace", "Delete"]}
+        proOptions={{ hideAttribution: true }}
         colorMode={colorMode}
         fitView
         connectionLineType={ConnectionLineType.SmoothStep}
@@ -81,9 +85,11 @@ export function Canvas() {
             "--xy-connectionline-stroke-width": 2
           } as React.CSSProperties
         }
-        maxZoom={1}
+        maxZoom={1.5}
       >
+        <Background />
         <Controls />
+        <MiniMap pannable zoomable />
         <Cursors />
         <Panel position="top-right">
           <AvatarStack />
