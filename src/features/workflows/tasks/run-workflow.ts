@@ -87,7 +87,7 @@ export const runWorkflowTask = task({
         apiKey: process.env.BROWSERBASE_API_KEY!,
         model: {
           modelName: "google/gemini-3.5-flash-lite",
-          apiKey: process.env.GEMINI_API_KEY
+          apiKey: process.env.GEMINI_API_KEY!
         },
         // Pino's logging backend spawns a thread-stream worker (lib/worker.js)
         // that can't be resolved inside trigger.dev's bundled output. Disable it —
