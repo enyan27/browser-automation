@@ -132,6 +132,13 @@
 
 .react-flow__edge.selected .react-flow__edge-path {
   stroke: var(--primary);
-  stroke-width: 3;
-  filter: drop-shadow(0 0 2px var(--primary));
+  stroke-width: 2;
+  stroke-dasharray: 6 4;
+  animation: edge-dash 0.5s linear infinite;
+}
+
+@keyframes edge-dash {
+  to {
+    stroke-dashoffset: -10;
+  }
 }

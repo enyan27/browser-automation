@@ -256,9 +256,17 @@ function Palette() {
     // maps a flow point p to the screen as p * zoom + {x, y}, so the pane center
     // in flow coordinates is (center - offset) / zoom.
     const { x, y, zoom } = getViewport()
-    const position = {
+
+    const centerPosition = {
       x: (width / 2 - x) / zoom,
       y: (height / 2 - y) / zoom
+    }
+
+    // Each new node is moved 60px to the bottom-right
+    // based on how many nodes already exist.
+    const position = {
+      x: centerPosition.x + nodes.length * 10,
+      y: centerPosition.y + nodes.length * 10
     }
 
     addNodes({
@@ -406,14 +414,18 @@ function RunButton({ workflowId }: { workflowId: string }) {
 export function RightSidebar({ workflowId }: { workflowId: string }) {
   const [tab, setTab] = useState("toolbar")
 
-  // TODO: read the currently selected node from React Flow.
   const selected = useStore(s => s.nodes.find(n => n.selected)) as StepNodeType | undefined
 
-  // TODO: auto-switch to the Editor tab when the selection changes.
   const [prevSelectedId, setPrevSelectedId] = useState(selected?.id)
-  if (selected && selected.id !== prevSelectedId) {
-    setPrevSelectedId(selected.id)
-    setTab("editor")
+
+  if (selected?.id !== prevSelectedId) {
+    setPrevSelectedId(selected?.id)
+
+    if (selected) {
+      setTab("editor")
+    } else {
+      setTab("toolbar")
+    }
   }
 
   return (
