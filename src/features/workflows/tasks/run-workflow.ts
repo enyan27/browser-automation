@@ -1,6 +1,6 @@
 import toposort from "toposort"
 import { logger, metadata, task } from "@trigger.dev/sdk"
-import type { DeserializedJson } from "@trigger.dev/core"
+// import type { DeserializedJson } from "@trigger.dev/core"
 import { Stagehand } from "@browserbasehq/stagehand"
 import { nodeExecutors } from "@/features/workflows/nodes/node-executors"
 import { interpolate, type NodeOutputs } from "@/features/workflows/lib/interpolate"
@@ -67,7 +67,7 @@ export const runWorkflowTask = task({
     // steps carries an arbitrary `output`, which is wider than trigger's
     // DeserializedJson metadata type; the values are JSON at runtime, so cast at
     // this one boundary rather than constraining the shape the console reads.
-    const publishSteps = () => metadata.set("steps", steps as unknown as DeserializedJson[])
+    const publishSteps = () => metadata.set("steps", steps as unknown as any)
 
     publishSteps()
 

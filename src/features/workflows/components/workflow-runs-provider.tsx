@@ -5,7 +5,7 @@ import { useRealtimeRunsWithTag } from "@trigger.dev/react-hooks"
 
 import type { RunStep, runWorkflowTask } from "@/features/workflows/tasks/run-workflow"
 
-type WorkflowRun = ReturnType<typeof useRealtimeRunsWithTag<typeof runWorkflowTask>>["runs"][number]
+type WorkflowRun = ReturnType<typeof useRealtimeRunsWithTag>["runs"][number]
 
 interface WorkflowRunsContextValue {
   runs: WorkflowRun[]
@@ -30,7 +30,7 @@ export function WorkflowRunsProvider({
   accessToken,
   children
 }: WorkflowRunsProviderProps) {
-  const { runs, error } = useRealtimeRunsWithTag<typeof runWorkflowTask>(`workflow:${workflowId}`, {
+  const { runs, error } = useRealtimeRunsWithTag(`workflow:${workflowId}`, {
     accessToken
   })
 
