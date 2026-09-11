@@ -35,7 +35,7 @@ git clone https://github.com/enyan27/browser-automation.git
 # Navigate to the project directory
 cd browser-automation
 
-# Install PHP dependencies
+# Install dependencies
 pnpm install
 
 # Create the environment file
