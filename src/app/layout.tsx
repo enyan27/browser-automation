@@ -10,7 +10,7 @@ import "./globals.css"
 const font = Nunito({ subsets: ["latin"], variable: "--font-sans" })
 
 export const metadata: Metadata = {
-  title: { default: "Workflow Automation", template: "%s ♡" }
+  title: { default: "Browser Automation", template: "%s ♡" }
 }
 
 export default function RootLayout({ children }: LayoutProps<"/">) {
